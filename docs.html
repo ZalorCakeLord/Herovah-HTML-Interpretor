@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herovah Docs</title>
+</head>
+<body>
+    <a href="index.html">Back to the fun!</a>
+    <h1>Herovah Documentation</h1>
+    <article>
+        <h2>Contents</h2>
+        <a href="#commands">Commands</a>
+    </article>
+    <article>
+        <h2>What is Herovah?</h2>
+        <p>Herovah is a minimalist brainf*** like programming language I made to play around with!</p>
+
+        <h2>What's special about it?</h2>
+        <p>Not much. It does have a very small amount of allowed memory, seven slots, but each slot can contain an arbitrarily large integer.</p>
+
+        <h2>How do I use it?</h2>
+        <p>The fun part! While it might seem rather complex at first, Herovah is actually pretty simple, (although I might be a bit biased on that count).</p>
+        <p>Herovah has only thirteen functioning commands in this iteration, and I only plan to add about five more to make it turing-complete.</p>
+        <p>Those commands are as follows:</p>
+        <hr>
+        <span id="commands"></span>
+        <table>
+            <tr>
+                <th>Command</th>
+                <th>Purpose (what it do)</th>
+            </tr>
+            <tr>
+                <td>&lt; and &gt;</td>
+                <td>These are pretty simple, they move left and right in memory.</td>
+            </tr>
+            <tr>
+                <td>+ and -</td>
+                <td>These should be obvious, allowing you to increase or decrease the value of the current cell of memory!</td>
+            </tr>
+            <tr>
+                <td>. and #</td>
+                <td>These are for debugging your program, or displaying data. The '.' will push the value of the current cell of memory to output, while the # will dump the entire memory, and also show you where the pointer is! Pretty darn useful.</td>
+            </tr>
+            <tr>
+                <td>X</td>
+                <td>X will eXecute the instructions currently stored in the memory (more on that later)! How it does this will depend on the instructions.</td>
+            </tr>
+            <tr>
+                <td>o</td>
+                <td>This command will zero out the cell the pointer is currently on! No need for fifty minuses!</td>
+            </tr>
+            <tr>
+                <td>$</td>
+                <td>$ will move the pointer to the first cell of memory, while zeroing out the second.</td>
+            </tr>
+            <tr>
+                <td>{ and }</td>
+                <td>These will copy the value of the current cell of memory, to the left and the right respectively. It doesn't change the value of the current cell!</td>
+            </tr>
+            
+
+        </table>
+        <hr>
+
+        <span id="details"></span>
+        <h2>Basic Details</h2>
+        <p>The first thing to know about Herovah, at least in this iteration, is there are ONLY SEVEN SLOTS OF MEMORY. Of these seven, the first and second tend to be used for instructions.</p>
+        <p>A basic program to multiply 4 by 3 and display the result would look like this: <span class="code">++&gt;++++&gt;&gt;&gt;&gt;&gt;++++&lt;+++X.</span></p>
+        <p>The first part of the program (++) increases the first slot of memory to two. This tells the code we are going to do <span class="magic">math</span>!</p>
+        <p>The other possible value (one) would be for displaying text. We'll get to that later.</p>
+        <p>Then we need to tell it what kind of math we are doing. For this we move over to the second slot. (&gt;).</p>
+        <p>There are five options for math:</p>
+        <table>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+          </tr>
+          <tr>
+              <td>+</td>
+              <td>-</td>
+              <td>/</td>
+              <td>*</td>
+              <td>%</td>
+          </tr>
+        </table>
+        <p>So we set the second slot to four (++++). As a reminder, our program up to this point is: <span class="code">++&gt;++++</span></p>
+        <p>If we use the # command at the end of this program we will get: <span id="code">2 &gt;4&lt; 0 0 0 0 0 pointer at 2</span></p>
+        <p>Now we can move over and do the actual math! Adding <span id="code">>>>>></span> will move our pointer over to the seventh spot, as you can see if you throw a # on the end.</p>
+        <p>Now if you've actually read this far down you might remember we were multiplying three and four. All we have to do is add four to the current spot <span id='code'>++++</span> then we move over to the left one (&lt;) add three (+++) run with X, and then display the result with '.'!</p>
+        <p>thus our program comes out to <span class="code">++&gt;++++&gt;&gt;&gt;&gt;&gt;++++&lt;+++X.</span></p>
+
+
+        <p>Now for text! To be entirely honest I'm not feeling typing out a play by play for the next one, but that's okay because we have code comments!</p>
+        <hr>
+        <span class="code">/hello world program: start with hello/ ++&gt;++++&gt;&gt;&gt;&gt;&gt;+++++&lt;+++X}---{&lt;&lt;+++++&lt;++&lt;X}*-X  /clear and add a space/ $+&gt;++++&gt;++++++&lt;X+++}*-X /world/ $++&gt;++++&gt;&gt;&gt;&gt;&gt;++++&lt;+++X&lt;&lt;+++++&lt;++++X}+++&gt;--}---*-X /now for exclamation mark/ $++&gt;++++&gt;&gt;++++++&lt;+++++X}o*-X</span>
+        <hr>
+
+        <p> The value for each letter/symbol is decide by it's point in the following list:</p>
+        <ol>
+            <li>"a"</li>
+            <li>"b"</li>
+            <li>"c"</li>
+            <li>"d"</li>
+            <li>"e"</li>
+            <li>"f"</li>
+            <li>"g"</li>
+            <li>"h"</li>
+            <li>"i"</li>
+            <li>"j"</li>
+            <li>"k"</li>
+            <li>"l"</li>
+            <li>"m"</li>
+            <li>"n"</li>
+            <li>"o"</li>
+            <li>"p"</li>
+            <li>"q"</li>
+            <li>"r"</li>
+            <li>"s"</li>
+            <li>"t"</li>
+            <li>"u"</li>
+            <li>"v"</li>
+            <li>"w"</li>
+            <li>"x"</li>
+            <li>"y"</li>
+            <li>"z"</li>
+            <li>' '</li>
+            <li>'newline'</li>
+            <li>'?'</li>
+            <li>'!'</li>
+            </ol>
+            <p>0 is an empty space.</p>
+
+            <p>And that's about it! Go forth and code! Feel free to direct any suggestions towards me.</p>
+
+    </article>
+</body>
+</html>
