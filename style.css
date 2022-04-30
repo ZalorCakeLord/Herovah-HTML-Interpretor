@@ -1,5 +1,6 @@
 body {
     background-color: rgba(30, 145, 203, 0.781);
+    font-size: 1.5em
 }
 
 .inputBar {
@@ -10,4 +11,20 @@ body {
 .code {
     background-color: black;
     color: rgba(234, 221, 221, 0.717)
+}
+
+table{
+    border:1px solid black;
+}
+
+table td {
+    border:1px solid black;
+}
+
+h2 {
+    text-align: center;
+}
+
+.toc {
+    text-align: center;
 }
