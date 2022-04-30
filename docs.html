@@ -12,7 +12,8 @@
     <h1>Herovah Documentation</h1>
     <article>
         <h2>Contents</h2>
-        <a href="#commands">Commands</a>
+        <a href="#commands">Commands</a><br>
+        <a href="#details">Simple Programs</a>
     </article>
     <article>
         <h2>What is Herovah?</h2>
@@ -68,7 +69,7 @@
         <span id="details"></span>
         <h2>Basic Details</h2>
         <p>The first thing to know about Herovah, at least in this iteration, is there are ONLY SEVEN SLOTS OF MEMORY. Of these seven, the first and second tend to be used for instructions.</p>
-        <p>A basic program to multiply 4 by 3 and display the result would look like this: <span class="code">++&gt;++++&gt;&gt;&gt;&gt;&gt;++++&lt;+++X.</span></p>
+        <p>A basic program to multiply 4 by 3 and display the result would look like this: <code class="code">++&gt;++++&gt;&gt;&gt;&gt;&gt;++++&lt;+++X.</code></p>
         <p>The first part of the program (++) increases the first slot of memory to two. This tells the code we are going to do <span class="magic">math</span>!</p>
         <p>The other possible value (one) would be for displaying text. We'll get to that later.</p>
         <p>Then we need to tell it what kind of math we are doing. For this we move over to the second slot. (&gt;).</p>
@@ -89,11 +90,11 @@
               <td>%</td>
           </tr>
         </table>
-        <p>So we set the second slot to four (++++). As a reminder, our program up to this point is: <span class="code">++&gt;++++</span></p>
-        <p>If we use the # command at the end of this program we will get: <span id="code">2 &gt;4&lt; 0 0 0 0 0 pointer at 2</span></p>
-        <p>Now we can move over and do the actual math! Adding <span id="code">>>>>></span> will move our pointer over to the seventh spot, as you can see if you throw a # on the end.</p>
-        <p>Now if you've actually read this far down you might remember we were multiplying three and four. All we have to do is add four to the current spot <span id='code'>++++</span> then we move over to the left one (&lt;) add three (+++) run with X, and then display the result with '.'!</p>
-        <p>thus our program comes out to <span class="code">++&gt;++++&gt;&gt;&gt;&gt;&gt;++++&lt;+++X.</span></p>
+        <p>So we set the second slot to four (++++). As a reminder, our program up to this point is: <code class="code">++&gt;++++</code></p>
+        <p>If we use the # command at the end of this program we will get: <code class="code">2 &gt;4&lt; 0 0 0 0 0 pointer at 2</code></p>
+        <p>Now we can move over and do the actual math! Adding <code class="code">>>>>></code> will move our pointer over to the seventh spot, as you can see if you throw a # on the end.</p>
+        <p>Now if you've actually read this far down you might remember we were multiplying three and four. All we have to do is add four to the current spot <code id='code'>++++</code> then we move over to the left one (&lt;) add three (+++) run with X, and then display the result with '.'!</p>
+        <p>thus our program comes out to <code class="code">++&gt;++++&gt;&gt;&gt;&gt;&gt;++++&lt;+++X.</code></p>
 
 
         <p>Now for text! To be entirely honest I'm not feeling typing out a play by play for the next one, but that's okay because we have code comments!</p>

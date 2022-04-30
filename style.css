@@ -6,3 +6,8 @@ body {
     width: 30%;
     line-height: 4em;
 }
+
+.code {
+    background-color: black;
+    color: rgba(234, 221, 221, 0.717)
+}
