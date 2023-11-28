@@ -9,6 +9,7 @@
 </head>
 <body>
     <a href="index.html">Back to the fun!</a>
+	<a href="programs.html">A few examples!</a>
     <h1>Herovah Documentation</h1>
     <article class="toc">
         <h2>Contents</h2>
@@ -43,7 +44,7 @@
             </tr>
             <tr>
                 <td>. and #</td>
-                <td>These are for debugging your program, or displaying data. The '.' will push the value of the current cell of memory to output, while the # will dump the entire memory, and also show you where the pointer is! Pretty darn useful.</td>
+                <td>These are for debugging your program, or displaying data. The '.' will push the value of the current cell of memory to output, while the # will dump the entire memory, and also show you where the pointer is! Pretty darn useful. <b>As of 1.5 the interpreter automatically appends one of these to the end of your code. Still useful in the center though!</b></td>
             </tr>
             <tr>
                 <td>X</td>
@@ -55,7 +56,7 @@
             </tr>
             <tr>
                 <td>$</td>
-                <td>$ will move the pointer to the first cell of memory, while zeroing out the second.</td>
+                <td>$ will move the pointer to the first cell of memory, while zeroing out every cell except whichever your pointer is on at the time of instruction.</td>
             </tr>
             <tr>
                 <td>{ and }</td>
@@ -101,6 +102,8 @@
         <hr>
         <code class="code">/hello world program: start with hello/ ++&gt;++++&gt;&gt;&gt;&gt;&gt;+++++&lt;+++X}---{&lt;&lt;+++++&lt;++&lt;X}*-X  /clear and add a space/ $+&gt;++++&gt;++++++&lt;X+++}*-X /world/ $++&gt;++++&gt;&gt;&gt;&gt;&gt;++++&lt;+++X&lt;&lt;+++++&lt;++++X}+++&gt;--}---*-X /now for exclamation mark/ $++&gt;++++&gt;&gt;++++++&lt;+++++X}o*-X</code>
         <hr>
+		
+		<p>When you use X while the first cell is set to 1 it will iterate through the last four cells, attempting to match each of them to a character.</p>
 
         <p> The value for each letter/symbol is decide by it's point in the following list:</p>
         <ol>
@@ -134,14 +137,43 @@
             <li>'newline'</li>
             <li>'?'</li>
             <li>'!'</li>
+			<li>'&lt;'</li>
+			<li>'&gt;'</li>
+			<li>'/'</li>
+			<li>'.'</li>
+			<li>','</li>
+			<li>'+'</li>
+			<li>'-'</li>
+			<li>'*'</li>
+			<li>'='</li>
+			<li>'('</li>
+			<li>')'</li>
+			<li>' " '</li>
             </ol>
             <p>0 is an empty space.</p>
-
+	
+			<p>If you attempt to display a character but the character code doesn't correspond to any of the above it will instead display the '�' symbol.</p>
 
             <h2>A few quick notes:</h2>
             <p>You <i>can</i> have negative integers in memory.<br>It's technically possible to trick it into giving you more slots of memory, but I can't promise everything will work as expected.</p>
+			
 
-            <p>And that's about it! Go forth and code! Feel free to direct any suggestions towards me.</p>
+            <p>And that's about it! Go forth and code! Feel free to direct any suggestions towards me. Below this is the changelog, where I will detail any significant or breaking changes between interpreter/language versions.</p>
+			
+			
+			<h2>Changelog</h2>
+			<b>1.5</b>
+			<ol>
+				<li>Language+Interpretor: Added 12 new characters, from 31(&lt;) to 42(")</li>
+				<li>Interpreter: Automatically appends the # command to the end of your code.</li>
+				<li>Interpreter: Updates as you write your code now again!</li>
+				<li>Interpreter: Attempting to display a character that doesn't match the built in list will now display �</li>
+				<li>Documentation: Minor changes, added changelog, fixed $ description.</li>
+				<li>Interpreter: Attempting to navigate to a cell higher or lower than the provided seven will cause it to wrap around to either the start or the end.</li>
+				<li>Interpreter: Attempted fix for code comments  (/) locking the page in an infinite loop.</li>
+				<li>Interpreter: Changed the input to a resizeable textarea.</li>
+				
+			</ol>
 
     </article>
 </body>

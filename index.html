@@ -8,14 +8,33 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1> Herovah V1.0 Interpreter </h1>
+    <h1> Herovah V1.5 Interpreter </h1>
     <hr>
     <a href="docs.html">What the heck is this?</a>
+	<table>
+          <tr>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+          </tr>
+          <tr>
+              <td>+</td>
+              <td>-</td>
+              <td>/</td>
+              <td>*</td>
+              <td>%</td>
+          </tr>
+        </table>
     <hr>
     <form id="inputForm">
         <label for="input">program</label><br>
-        <input class="inputBar" type="text" id="input" name="input" ><br>
+		<textarea id="input" name="input" rows="6" cols="60">
+		</textarea>
+        <!--<input class="inputBar" type="text" id="input" name="input" ><br>-->
       </form>
+	<p id="memView">[0,0,0,0,0,0,0]</p>
     <p>Output: </p>
     <hr>
     <span id="output"></span>    
