@@ -2,6 +2,8 @@
 
 Play with it [Here](https://zalorcakelord.github.io/Herovah-HTML-Interpretor/).
 
+***NOTE***: YOU CAN USE , TO GET USER INPUT, BUT IT WON'T RUN IN THE INTERPRETER UNLESS YOU SUBMIT. This is a good thing, I promise.
+
 What is Herovah?
 ----------------
 
