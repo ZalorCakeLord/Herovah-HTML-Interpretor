@@ -25,9 +25,7 @@ Those commands are as follows:
 
 * * *
 
-Command
-
-Purpose (what it do)
+Commands and what it do!
 
 < and >
 
@@ -48,6 +46,10 @@ X will eXecute the instructions currently stored in the memory (more on that lat
 o
 
 This command will zero out the cell the pointer is currently on! No need for fifty minuses!
+
+,
+
+This gets user input! Interpreter handles it as a <prompt>. Input should be a number!!!
 
 $
 
