@@ -57,7 +57,7 @@ These will copy the value of the current cell of memory, to the left and the rig
 
 \[ and \]
 
-These are for loops! The way this works is pretty simple. When you use the \[ symbol you mark the iterator, and whatever you do inside the brackets (once they are closed) will repeat until the iterator cell is at 0. You do not need to return to the iterator cell manually, as at the end of the loop it will automatically move back to it, but you do need to manually iterate, so it's good practice to begin your loop with `[-` The interpretor will kill a loop after 10000 iterations. [`++>+>+++++>+++++>+++++<<[->X<]`](programs.html)
+These are for loops! The way this works is pretty simple. When you use the \[ symbol you mark the iterator, and whatever you do inside the brackets (once they are closed) will repeat until the iterator cell is at 0. You do not need to return to the iterator cell manually, as at the end of the loop it will automatically move back to it, but you do need to manually iterate, so it's good practice to begin your loop with `[-` The interpretor will kill a loop after 10000 iterations. [`++>+>+++++>+++++>+++++<<[->X<]`](https://zalorcakelord.github.io/Herovah-HTML-Interpretor/programs.html)
 
 * * *
 
