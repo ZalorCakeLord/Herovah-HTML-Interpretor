@@ -8,6 +8,7 @@ function main() {
     form.addEventListener('input',(event)=>{
         event.preventDefault()
         let program = input.value
+		program+='#'
         output.innerHTML = executeCode(program)
     })
 	
@@ -70,20 +71,54 @@ function memView(){
 }
 
 function executeCode(code){
-	code+='#'
+	let loopKill = 10000
 	console.log(code)
     let output = ''
     let readSpace=0
     let jump = false
     function dump(){
-        let currMem = memory
-        currMem[spot] = '>'+currMem[spot]+'<'
-        output+=('<br>'+currMem.join(' ')+ ' pointer at '+(spot+1))
+        let currMem = [...memory]
+		let currentOp = " No operation selected."
+		switch(currMem[0]){
+			case 1:
+				currentOp = " Emitting Text"
+			break;
+			case 2:
+				currentOp = " Math: "
+				switch(currMem[1]){
+					case 1:
+						currentOp+="Addition"
+					break;
+					case 2:
+						currentOp+="Subtraction"
+					break;
+					case 3:
+						currentOp+="Division"
+					break;
+					case 4:
+						currentOp+="Multiplication"
+					break;
+					case 5:
+						currentOp+="Modulus"
+					break;
+					default:
+						currentOp+=" No valid mathematical operation selected."
+					break;
+				}
+			break;
+			default:
+			break;
+		}
+		currMem[spot] = '<u>'+currMem[spot]+'</u>'
+        output+=('<br>'+currMem.join(' ')+ currentOp+'<br>')
     }
     //write to memory
-    
+    let loopTo = false
+	let loopPointer = false
     for(let i=readSpace;i<code.length;i++){
-        
+		//iterating through the program not the memory
+        const readSpaceFix=x=>readSpace=i;
+		
         readSpace++
         if(code[i]==='/'){
             for(let x=readSpace;code[x]!='/';x++){
@@ -92,6 +127,30 @@ function executeCode(code){
             }
             i=readSpace
         }
+		//loops: iterate until pointer is on 0
+		//>>++. /2/ [>+.<-.>+.<-.]>>++ 0 2 0 2
+		if(code[i]==="["){
+			
+			loopPointer = spot
+			loopTo = i
+			console.log(loopPointer,loopTo)
+		}
+		if(code[i]==="]"){
+			console.log(loopTo,loopPointer,memory[loopPointer],loopKill)
+			if(loopTo&&loopPointer&&memory[loopPointer]>1){
+				if(loopKill<=0) break;
+				loopKill--
+				i=loopTo
+				readSpaceFix()
+				spot=loopPointer
+			}
+			if(memory[loopPointer]===1){
+				memory[loopPointer]--
+				loopKill = 10000
+			}
+		}
+		
+		
         function basic(x){
         if(x==='>') spot<6?spot++:spot=0
         if(x==='<') spot>0?spot--:spot=6

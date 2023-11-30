@@ -25,7 +25,7 @@
 
         <h2>How do I use it?</h2>
         <p>The fun part! While it might seem rather complex at first, Herovah is actually pretty simple, (although I might be a bit biased on that count).</p>
-        <p>Herovah has only thirteen functioning commands in this iteration, and I only plan to add about five more to make it turing-complete.</p>
+        <p>Herovah has only thirteen functioning commands in this iteration, and I only plan to add about five more to make it turing-completeish.</p>
         <p>Those commands are as follows:</p>
         <hr>
         <span id="commands"></span>
@@ -62,6 +62,10 @@
                 <td>{ and }</td>
                 <td>These will copy the value of the current cell of memory, to the left and the right respectively. It doesn't change the value of the current cell!</td>
             </tr>
+			<tr>
+				<td>[ and ]</td>
+				<td>These are for loops! The way this works is pretty simple. When you use the [ symbol you mark the iterator, and whatever you do inside the brackets (once they are closed) will repeat until the iterator cell is at 0. You do not need to return to the iterator cell manually, as at the end of the loop it will automatically move back to it, but you do need to manually iterate, so it's good practice to begin your loop with <code>[-</code> The interpretor will kill a loop after 10000 iterations. <a href="programs.html"><code>++&gt;+&gt;+++++&gt;+++++&gt;+++++&lt;&lt;[-&gt;X&lt;]</code></a></td>
+			</tr>
             
 
         </table>
@@ -162,6 +166,12 @@
 			
 			
 			<h2>Changelog</h2>
+			<b>2.0</b>
+			<ol>
+				<li>Language+Interpreter: Loops! Finally added a looping method to Herovah.</li>
+				<li>Interpreter: Fixed bug where the dump function '#' was mutating the actual memory array (oopsy, don't know how that wasn't breaking literally everything :) )</li>
+				<li>Documentation: Added loops, added example programs page with loop example.</li>
+			</ol>
 			<b>1.5</b>
 			<ol>
 				<li>Language+Interpretor: Added 12 new characters, from 31(&lt;) to 42(")</li>
