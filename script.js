@@ -5,12 +5,47 @@ function main() {
     const input = document.getElementById('input')
     const output = document.querySelector('#output')
 	const memview = document.getElementById("memView")
-    form.addEventListener('input',(event)=>{
+	//const trueRun = document.getElementById("runMe").checked
+    //form.addEventListener('input',(event)=>{
+	//	let caretPos = document.getElementById("input").selectionStart; 
+	//	console.log(caretPos)
+    //    event.preventDefault()
+    //    let program = input.value
+	//	program+='#'
+    //    output.innerHTML = executeCode(program)
+    //})
+	form.addEventListener('submit',onInput)
+	input.addEventListener('input', onInput);
+	//input.addEventListener('click', onInput);
+	/*input.addEventListener('keydown', function(event) {
+		if (event.keyCode >= 37 && event.keyCode <= 40) {
+			event.preventDefault();
+			onInput(event);
+		}
+	});*/
+	//input.addEventListener('paste', onInput);
+	//input.addEventListener('cut', onInput);
+	
+	/*function onArrowKey(event) {
+		// Arrow keys have key codes 37 (left), 38 (up), 39 (right), 40 (down)
+		if (event.keyCode >= 37 && event.keyCode <= 40) {
+			let currentCaretPos = input.selectionStart;
+			//detectCaretMovement(previousCaretPos, currentCaretPos);
+			//previousCaretPos = currentCaretPos;
+			console.log(currentCaretPos)
+		}*
+		
+	}*/
+	function onInput(event){
+		let type = event.type
+		let caretPos = document.getElementById("input").selectionStart; 
+		console.log(caretPos)
         event.preventDefault()
         let program = input.value
 		program+='#'
-        output.innerHTML = executeCode(program)
-    })
+		event.type==="submit"?output.innerHTML =executeCode(program,true):output.innerHTML =executeCode(program,false)
+        //output.innerHTML = executeCode(program)
+	}
 	
 	
 }
@@ -70,7 +105,7 @@ function memView(){
 	return output
 }
 
-function executeCode(code){
+function executeCode(code,submitted){
 	let loopKill = 10000
 	console.log(code)
     let output = ''
@@ -161,6 +196,17 @@ function executeCode(code){
         if(x==='*') {spot=0;memory[1]=0}
         if(x==='{') memory[spot-1] = memory[spot]
         if(x==='}') memory[spot+1] = memory[spot]
+		if(x===',') {
+			if(submitted){
+				let userInput = +prompt('Provide Input: ')
+				if(userInput==="NaN"){
+					alert("MUST BE A VALID NUMBER")
+					return false
+				}
+				memory[spot] = userInput
+			}
+		
+		}
 		
         if(x==='.') output+=(memory[spot])
         if(x==='$'){
@@ -172,8 +218,9 @@ function executeCode(code){
         
         }
         basic(code[i])
+		//if()
         //conditional (how tf)
-        
+        // emit number i+>+
 		
 		
         if(code[i]==='X'){
