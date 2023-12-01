@@ -33,6 +33,22 @@
 		<h3>Add two user provided numbers and output result.</h3>
 		<code class="code">++&gt;+&gt;&gt;&gt;,&gt;,&lt;X.</code>
 		<p>First we set the first cell to two (math) and set the second cell to one (addition). Then we move over three (could have been one, I just chose three for no reason.) and get user input (','). We move over to the right once more and get user input again, before moving left, executing, and outputting the result ('.').
+		
+		<h3>Add two user provided numbers but with instructions.</h3>
+		<code class="code">++&gt;++++&gt;+++++}&gt;&gt;+++&lt;X-&gt;++&gt;++&lt;XX&gt;+++&gt;&gt;-X+&gt;---&gt;X-&lt;&gt;&gt;&gt;{&gt;{&lt;&lt;X++?&gt;+&gt;++++}&gt;+++++++++&gt;-X&gt;&gt;+&gt;}&lt;}&gt;+&gt;o&gt;o&gt;o&gt;X&gt;&gt;++++++++&gt;o+&lt;&lt;+++&lt;+&gt;&gt;&gt;}&gt;++}++X-&gt;+&gt;&gt;-X+&gt;&gt;&gt;&gt;{&lt;+++++&gt;&gt;{-&lt;+&gt;&gt;&gt;-X&gt;&gt;&gt;{&lt;----&gt;-----&gt;-&gt;o&gt;&gt;+&lt;&lt;K&lt;}&gt;}+}X++&gt;o&gt;-X+&gt;&gt;&gt;&gt;&gt;{&lt;{&lt;{o+++]]}++X-&gt;&gt;{&lt;------&gt;o+++}++X--&gt;o&gt;-X&gt;&gt;o++&gt;o+++++&gt;&gt;{&lt;+++++&gt;++++++X+&gt;&gt;&gt;}X+++$+X$+&gt;+&gt;&gt;,&lt;,X.</code>
+		
+		<h3>First n even numbers, n being provided by user.</h3>
+		<code class="code">++&#62;+++++&#62;,&#62;&#62;&#62;++&#60;+&#60;&#60;[-&#62;&#62;^X&#60;=(|.o)&#62;|+]</code>
+		<p>We begin by setting the first cell to two, for math, and the second to five, for modulus. Modulus, if you didn't know, is like division but instead you get the remainder. For example, 10%6 will have a remainder of four, because 10 can only go into six six times before you only have four remaining.
+
+		We then move to the third cell and get user input, for n. We then set the fifth cell to one, because we are getting the 'first' n even numbers, and set the sixth to two.
+
+		We are setting the sixth cell to two in order to carry out a common math trick, where you check the remainder from dividing a number in two to see if it's even. All even numbers will have a remainder of zero.
+		
+		Then we get to the fun part of this code.
+		
+		Obviously we start by opening a loop in the usual manner <code class="code">[-</code> We then move over to the fifth cell and use ^ to store the current value, lest it vanish into the aether, forever lost. Having done this, we run the operation <code class="code">&#62;&#62;^X</code>. For 1, we will have a remainder of one, so it won't change on the first iteration. Having ran the operation, we need to check if the remainder, which is now what is in the fifth cell, is equal to zero. Thus we move over to the fourth cell, which is still zero, and IF it's equal to the fifth cell we run the code inside our parentheses <code class="code">&#60;=(|.o)</code>. This code replaces the value of the fourth cell with the number we were checking (|) and emits it with (.). Then we zero it out so the next loop can do the same thing again, move over to the fifth cell again, and use (|) to replace the result of our modulus with the original value before adding one to that value and reaching the end of the loop. <code class="code">&#62;|+]</code>. And that's it!</p>
+		
     </article>
 </body>
 </html>

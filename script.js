@@ -52,6 +52,8 @@ function main() {
 
 
 
+
+
 let alphabet = ['',"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",' ','<br>','?','!',"<",">","/",".",",","+","-","*","=","(",")",'"']
 let memory = [0,0,0,0,0,0,0] //not reliant on this being exact, could make bigger but I like 7
           //  0 1 2 3 4 5 6
@@ -63,6 +65,7 @@ let memory = [0,0,0,0,0,0,0] //not reliant on this being exact, could make bigge
 
 let code = ''
 let spot = 0
+let hold = 0
 
 function displayString(num){
     return num+1>alphabet.length?alphabet[num+1]:'�'
@@ -103,6 +106,9 @@ function memView(){
     currMem[spot] = '>'+currMem[spot]+'<'
     output+=('<br>'+currMem.join(' ')+ ' pointer at '+(spot+1))
 	return output
+}
+function isLetter(str) {
+  return str.length === 1 && str.match(/[a-z]/i);
 }
 
 function executeCode(code,submitted){
@@ -196,17 +202,30 @@ function executeCode(code,submitted){
         if(x==='*') {spot=0;memory[1]=0}
         if(x==='{') memory[spot-1] = memory[spot]
         if(x==='}') memory[spot+1] = memory[spot]
+		if(x==='^') hold = memory[spot]
+		if(x==='|') memory[spot] = hold
 		if(x===',') {
 			if(submitted){
-				let userInput = +prompt('Provide Input: ')
-				if(userInput==="NaN"){
-					alert("MUST BE A VALID NUMBER")
-					return false
+				let userInput;
+				
+				userInput = prompt('Provide Input: ');
+
+				if (isNaN(+userInput)) {
+					let letter = alphabet.indexOf(userInput);
+					if (letter === -1) {
+						alert("MUST BE A VALID NUMBER OR LETTER");
+						return false;
+					}
+					userInput = letter;
+				} else {
+				userInput = +userInput;
 				}
 				memory[spot] = userInput
+				
 			}
 		
 		}
+		
 		
         if(x==='.') output+=(memory[spot])
         if(x==='$'){
@@ -242,6 +261,21 @@ function executeCode(code,submitted){
                 
             }
         }
+		if(code[i]==="="){
+			//do stuff in () if memory[spot]===memory[spot+1]
+			//make sure the opening parenthese is there
+			if(code[i+1]==="("){
+				let closeConditional = findNextIndexInString(code,")",i+1)
+				//make sure closing parenthese exists
+				if(closeConditional>0){
+					//skip if not equal
+					if(memory[spot]!==memory[spot+1]){
+						i = closeConditional
+						readSpaceFix()
+					}
+				}
+			}
+		}
     }
 	
 	

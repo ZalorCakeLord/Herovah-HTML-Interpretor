@@ -18,14 +18,14 @@
     </article>
     <article>
         <h2>What is Herovah?</h2>
-        <p>Herovah is a minimalist brainf*** like programming language I made to play around with!</p>
+        <p>Herovah is a brainf*** like programming language I made to play around with!</p>
 
         <h2>What's special about it?</h2>
         <p>Not much. It does have a very small amount of allowed memory, seven slots, but each slot can contain an arbitrarily large integer.</p>
 
         <h2>How do I use it?</h2>
         <p>The fun part! While it might seem rather complex at first, Herovah is actually pretty simple, (although I might be a bit biased on that count).</p>
-        <p>Herovah has only thirteen functioning commands in this iteration, and I only plan to add about five more to make it turing-completeish.</p>
+        <p>Herovah has only nineteen functioning commands in this iteration, and I do not foresee adding more in the near future.</p>
         <p>Those commands are as follows:</p>
         <hr>
         <span id="commands"></span>
@@ -69,6 +69,14 @@
 			<tr>
 				<td>[ and ]</td>
 				<td>These are for loops! The way this works is pretty simple. When you use the [ symbol you mark the iterator, and whatever you do inside the brackets (once they are closed) will repeat until the iterator cell is at 0. You do not need to return to the iterator cell manually, as at the end of the loop it will automatically move back to it, but you do need to manually iterate, so it's good practice to begin your loop with <code>[-</code> The interpretor will kill a loop after 10000 iterations. <a href="programs.html"><code>++&gt;+&gt;+++++&gt;+++++&gt;+++++&lt;&lt;[-&gt;X&lt;]</code></a></td>
+			</tr>
+			<tr>
+				<td>= and ()</td>
+				<td>Conditionals! Used like this: <code class="code">=(.)</code>. That example will emit the current cells value if it is equal to the cell to the right. You cannot change which cell it checks against, it will always be the cell directly to the right, and thus you cannot use this in cell seven. <a href="programs.html"><code>Go here for an example.</code></a></td>
+			</tr>
+			<tr>
+				<td>^ and |</td>
+				<td>^ Will store the value of the current cell in temporary memory, and | will set the cell you are on to said value. You can only store one value this way at any time, and using ^ again will replace any previous values. Begins as 0.<a href="programs.html">View the programs page for an example.</a></td>
 			</tr>
             
 
@@ -170,6 +178,10 @@
 			
 			
 			<h2>Changelog</h2>
+			<b>3.0</b>
+			<ol>
+				<li>Language+Interpreter: Added several new characters, such as ^,|,= and (). View the table for more information.</li>
+			</ol>
 			<b>2.1</b>
 			<ol>
 				<li>Interpreter+Language: Added the , character, which calls for user input! Will only run on a full submit, so be aware! Also added a submit button.
