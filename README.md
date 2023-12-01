@@ -7,7 +7,7 @@ Play with it [Here](https://zalorcakelord.github.io/Herovah-HTML-Interpretor/).
 What is Herovah?
 ----------------
 
-Herovah is a minimalist brainf\*\*\* like programming language I made to play around with!
+Herovah is a brainf\*\*\* like programming language I made to play around with!
 
 What's special about it?
 ------------------------
@@ -19,7 +19,7 @@ How do I use it?
 
 The fun part! While it might seem rather complex at first, Herovah is actually pretty simple, (although I might be a bit biased on that count).
 
-Herovah has only thirteen functioning commands in this iteration, and I only plan to add about five more to make it turing-completeish.
+Herovah has only nineteen functioning commands in this iteration, and I do not foresee adding more in the near future.
 
 Those commands are as follows:
 
@@ -62,6 +62,14 @@ These will copy the value of the current cell of memory, to the left and the rig
 \[ and \]
 
 These are for loops! The way this works is pretty simple. When you use the \[ symbol you mark the iterator, and whatever you do inside the brackets (once they are closed) will repeat until the iterator cell is at 0. You do not need to return to the iterator cell manually, as at the end of the loop it will automatically move back to it, but you do need to manually iterate, so it's good practice to begin your loop with `[-` The interpretor will kill a loop after 10000 iterations. [`++>+>+++++>+++++>+++++<<[->X<]`](https://zalorcakelord.github.io/Herovah-HTML-Interpretor/programs.html)
+
+\= and ()
+
+Conditionals! Used like this: `=(.)`. That example will emit the current cells value if it is equal to the cell to the right. You cannot change which cell it checks against, it will always be the cell directly to the right, and thus you cannot use this in cell seven. [`Go here for an example.`](https://zalorcakelord.github.io/Herovah-HTML-Interpretor/programs.html)
+
+^ and |
+
+^ Will store the value of the current cell in temporary memory, and | will set the cell you are on to said value. You can only store one value this way at any time, and using ^ again will replace any previous values. Begins as 0.[View the programs page for an example.](https://zalorcakelord.github.io/Herovah-HTML-Interpretor/programs.html)
 
 * * *
 
@@ -165,6 +173,14 @@ And that's about it! Go forth and code! Feel free to direct any suggestions towa
 
 Changelog
 ---------
+
+**3.0**
+
+1.  Language+Interpreter: Added several new characters, such as ^,|,= and (). View the table for more information.
+
+**2.1**
+
+1.  Interpreter+Language: Added the , character, which calls for user input! Will only run on a full submit, so be aware! Also added a submit button.
 
 **2.0**
 
